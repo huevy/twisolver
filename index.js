@@ -158,18 +158,3 @@ var qFetchByRef = q.denodeify(fetchByRef);
 module.exports = {
   fetchByRef: qFetchByRef
 };
-
-qFetchByRef('@microsoft')
-  .then(function(result) {
-    console.log(result);
-  }, function(error) {
-    console.error('ERROR:', error);
-  }).then(function() {
-    return qFetchByRef('@1');
-  }).then(function(result) {
-    console.log(result);
-  }, function(error) {
-    console.error('ERROR:', error);
-  }).then(function() {
-    process.exit();
-  });
